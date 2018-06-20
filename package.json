@@ -1,0 +1,43 @@
+{
+  "name": "vue-url-params",
+  "version": "1.0.0",
+  "description": "A vue mixin that simplifies working with url parameters. The package is developed for the purpose of allowing the key and values of a vue filter to be defined with url parameters. Referenced from https://github.com/Sempro/vue-url-parameters.git",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "prepublish": "npm run build",
+    "test": "node_modules/.bin/mocha tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/absk1317/vue-url-params.git"
+  },
+  "keywords": [
+    "Vue",
+    "url parameters",
+    "url params",
+    "url params with ?",
+    "vue mixin",
+    "mixin",
+    "query string parameters",
+    "query string"
+  ],
+  "author": {
+    "name": "Abhishek Verma",
+    "email": "absk1317@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/absk1317/vue-url-params/issues"
+  },
+  "homepage": "https://github.com/absk1317/vue-url-params",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
