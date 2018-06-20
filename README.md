@@ -1,9 +1,6 @@
-# vue-url-parameters
+# vue-url-params
 
-[![Latest Version on NPM](https://img.shields.io/npm/v/vue-url-parameters.svg?style=flat-square)](https://npmjs.com/package/vue-url-parameters)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-
-A vue mixin that simplifies working with url parameters. The package is developed for the purpose of allowing the key and values of a vue filter to be defined with url parameters.
+A vue mixin that simplifies working with url parameters. The package is developed for the purpose of allowing the key and values of a vue filter to be defined with url parameters It adds the params after a `?` and won't let the window reload.
 
 ## Install
 
@@ -12,7 +9,8 @@ A vue mixin that simplifies working with url parameters. The package is develope
 You can install the package via npm:
 
 ```bash
-$ npm install vue-url-parameters
+$ npm install vue-url-params # using npm
+$ yarn add vue-url-params # using yarn
 ```
 
 ## Usage
@@ -20,7 +18,7 @@ $ npm install vue-url-parameters
 Import the package into your vue component.
 
 ```js
-import vueUrlParameters from 'vue-url-parameters';
+import vueUrlParameters from 'vue-url-params';
 ```
 
 Apply the mixin:
@@ -65,30 +63,10 @@ this.getFiltersFromUrl(this.searchParams, true);
 
 Strings that can be cast to a numeric value will be cast to a float. Strings that equals either _true_ or _false_ will be cast to a boolean.
 
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
-
-```bash
-$ npm run test
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## Security
 
-If you discover any security related issues, please contact [admin@sempro.no](mailto:admin@sempro.no) instead of using the issue tracker.
+If you discover any security related issues, please contact [absk1317@gmailc.com](mailto:absk1317@gmail.com) or use the issue tracker.
 
 ## Credits
 
-- [Runar Jørgensen](https://github.com/ventrec)
-- [Christoffer Martinsen](https://github.com/mrtnsn)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+- [Sempro](https://github.com/sempro)
