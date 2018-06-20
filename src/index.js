@@ -6,15 +6,16 @@ module.exports = {
      * Retrieves parameters from url and sets correct filters
      */
     getFiltersFromUrl: function(data, convertTypes = false, urlString = null) {
-      let url = urlString || window.location.hash;
+      let url = urlString || window.location.search;
+      // let url_split = url_hash.split('');
+      // url_split.splice(0, 1, '?')
+      // let url = url_split.join('')
 
       // Return data if url length is not more then 1
       if (url.length <= 1) {
         return data;
       }
-
-      // Remove # as we do not need it in the string
-      if (url[0] === '#') {
+      if (url[0] === '?') {
         url = url.substring(1);
       }
 
@@ -110,7 +111,17 @@ module.exports = {
      * Adds parameters to url
      */
     updateUrlHash: function(data) {
-      window.location.hash = this.calculateUrlHash(data);
+      let newHash = this.calculateUrlHash(data);
+      let oldHash = window.location.search.slice(1);
+      if (newHash !== oldHash) {
+        let params = new URLSearchParams();
+        Object.keys(data).forEach(item => {
+          params.set(item, data[item]);
+        });
+        window.history.replaceState({}, '', `${location.pathname}?${params}`);
+
+        // window.location.search = newHash;
+      }
     },
 
     calculateUrlHash: function(data) {
@@ -163,7 +174,7 @@ module.exports = {
 
       // Prevent scroll to top if urlHash is empty
       if (urlHash.length === 0) {
-        urlHash = '#!';
+        urlHash = '?!';
       }
 
       return urlHash;
